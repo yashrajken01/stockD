@@ -30,7 +30,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
     _loadFamily();
   }
 
-  // ================= LOAD FAMILY =================
 
   Future<void> _loadFamily() async {
     if (user == null) return;
@@ -90,7 +89,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
     }
   }
 
-  // ================= CREATE FAMILY =================
 
   Future<void> _createFamily() async {
     if (user == null) return;
@@ -117,7 +115,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
     await _loadFamily();
   }
 
-  // ================= JOIN FAMILY =================
 
   Future<void> _joinFamily() async {
     final code = _codeController.text.trim().toUpperCase();
@@ -153,7 +150,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
     await _loadFamily();
   }
 
-  // ================= LEAVE FAMILY =================
 
   Future<void> _leaveFamily() async {
     if (user == null || _familyId == null) return;
@@ -180,7 +176,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
     setState(() => _isLoading = false);
   }
 
-  // ================= UI =================
 
   @override
   Widget build(BuildContext context) {
@@ -210,7 +205,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
     );
   }
 
-  // ================= NO FAMILY =================
 
   Widget _buildNoFamilyUI() {
     return Column(
@@ -252,7 +246,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
     );
   }
 
-  // ================= FAMILY =================
 
   Widget _buildFamilyUI() {
     return Column(
@@ -260,7 +253,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
       children: [
         const SizedBox(height: 12),
 
-        // 🔐 FAMILY CODE (CENTERED)
         Center(
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 18),
@@ -302,7 +294,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
 
         const SizedBox(height: 28),
 
-        // 👨‍👩‍👧‍👦 MEMBERS TITLE
         const Text(
           'Family Members',
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
@@ -310,7 +301,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
 
         const SizedBox(height: 10),
 
-        // 👥 MEMBER LIST
+
         Expanded(
           child: ListView.builder(
             itemCount: _memberNames.length,
@@ -335,7 +326,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
 
         const SizedBox(height: 16),
 
-        // 🚪 LEAVE FAMILY BUTTON (CENTERED)
         Center(
           child: SizedBox(
             width: 220,
