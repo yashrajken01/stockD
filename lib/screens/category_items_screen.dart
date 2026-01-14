@@ -60,7 +60,7 @@ class _CategoryItemsScreenState extends State<CategoryItemsScreen>
     super.dispose();
   }
 
-  // ================= SHARED INVENTORY FIX =================
+ 
 
   Future<CollectionReference<Map<String, dynamic>>> _getItemsCollection() async {
     final user = FirebaseAuth.instance.currentUser!;
@@ -84,7 +84,7 @@ class _CategoryItemsScreenState extends State<CategoryItemsScreen>
         .collection('items');
   }
 
-  // ================= SHOPPING LIST =================
+
 
   Future<void> _addItemToShoppingList(String name) async {
     final ref = await ShoppingListCollectionHelper.getShoppingListCollection();
@@ -135,7 +135,7 @@ class _CategoryItemsScreenState extends State<CategoryItemsScreen>
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Drag handle
+
                   Container(
                     width: 40,
                     height: 4,
@@ -157,7 +157,6 @@ class _CategoryItemsScreenState extends State<CategoryItemsScreen>
 
                   const SizedBox(height: 24),
 
-                  // ===== ORIGINAL LIQUID SLIDER =====
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -178,7 +177,7 @@ class _CategoryItemsScreenState extends State<CategoryItemsScreen>
                           child: Stack(
                             alignment: Alignment.bottomCenter,
                             children: [
-                              // Liquid fill
+                              
                               Container(
                                 width: double.infinity,
                                 height: 220 * (sliderValue / 100),
@@ -205,7 +204,7 @@ class _CategoryItemsScreenState extends State<CategoryItemsScreen>
                                 ),
                               ),
 
-                              // Percentage text
+                          
                               Center(
                                 child: Text(
                                   '${sliderValue.toInt()}%',
@@ -294,7 +293,6 @@ class _CategoryItemsScreenState extends State<CategoryItemsScreen>
   }
 
 
-  // ================= UI =================
 
   @override
   Widget build(BuildContext context) {
@@ -343,7 +341,7 @@ class _CategoryItemsScreenState extends State<CategoryItemsScreen>
         ),
       ),
 
-      // 🔑 ONLY CHANGE IS HERE
+    
       body: FutureBuilder<CollectionReference<Map<String, dynamic>>>(
         future: _getItemsCollection(),
         builder: (context, collectionSnapshot) {
@@ -415,10 +413,10 @@ class _CategoryItemsScreenState extends State<CategoryItemsScreen>
                       children: [
                         SlidableAction(
                           onPressed: (_) async {
-                            // Close slidable first
+                        
                             Slidable.of(context)?.close();
 
-                            // Wait one frame so context is stable
+                         
                             await Future.delayed(const Duration(milliseconds: 50));
 
                             if (!context.mounted) return;
