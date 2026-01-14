@@ -1,5 +1,3 @@
-// home screen (FIXED – shared family inventory)
-
 import 'package:flutter/material.dart';
 import 'package:smart_grocery/screens/scan_bill_screen.dart';
 import 'package:smart_grocery/screens/settings_screen.dart';
@@ -37,7 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
     'Frozen Foods': 'Frozen',
   };
 
-  // ================= SHARED INVENTORY =================
 
   Future<
       CollectionReference<Map<String, dynamic>>> _getItemsCollection() async {
@@ -62,7 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
         .collection('items');
   }
 
-  // ================= LOGOUT =================
 
   Future<void> _logoutUser(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
@@ -73,8 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  // ================= EXPIRING COUNT =================
-
+  
   Stream<int> _getExpiringCountStream() async* {
     final ref = await _getItemsCollection();
 
@@ -107,7 +102,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  // ================= SEARCH =================
 
   Future<void> _handleSearch(String query) async {
     final q = query.trim().toLowerCase();
@@ -161,7 +155,6 @@ class _MyHomePageState extends State<MyHomePage> {
         .showSnackBar(SnackBar(content: Text(msg)));
   }
 
-  // ================= EXPIRING DIALOG =================
 
   void _showExpiringItems() async {
     final ref = await _getItemsCollection();
@@ -310,8 +303,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  // ================= UI =================
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -325,13 +317,11 @@ class _MyHomePageState extends State<MyHomePage> {
           child: SafeArea(
             child: Stack(
               children: [
-                // Main Scrollable Content
                 SingleChildScrollView(
-                  padding: const EdgeInsets.only(bottom: 100), // Space for FAB
+                  padding: const EdgeInsets.only(bottom: 100),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Top Bar with Menu and Cart
                       Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Container(
@@ -381,7 +371,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
 
-                      // Search Bar + Notification
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12.0),
                         child: Row(
@@ -471,7 +460,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
                       const SizedBox(height: 20),
 
-                      // Categories Title
                       const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 16.0),
                         child: Text(
@@ -482,8 +470,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                       const SizedBox(height: 12),
 
-                      // Categories Grid
-                      Padding(
+                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12.0),
                         child: GridView.count(
                           shrinkWrap: true,
@@ -512,7 +499,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
 
-                // Floating Plus Button (Fixed Bottom Right)
                 Positioned(
                   bottom: 20,
                   right: 20,
@@ -520,7 +506,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      // Option 1: Scan Receipt
+                    
                       if (_showOptions)
                         AnimatedContainer(
                           duration: const Duration(milliseconds: 200),
@@ -566,7 +552,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       const SizedBox(height: 12),
 
-                      // Option 2: Manual Entry
                       if (_showOptions)
                         AnimatedContainer(
                           duration: const Duration(milliseconds: 300),
@@ -612,7 +597,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       const SizedBox(height: 12),
 
-                      // Main Plus Button
                       FloatingActionButton(
                         backgroundColor: AppColors.accent,
                         elevation: 6,
@@ -623,7 +607,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           });
                         },
                         child: AnimatedRotation(
-                          turns: _showOptions ? 0.125 : 0.0, // 45° = 1/8 turn
+                          turns: _showOptions ? 0.125 : 0.0,
                           duration: const Duration(milliseconds: 260),
                           curve: Curves.easeOutCubic,
                           child: const SizedBox(
