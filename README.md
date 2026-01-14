@@ -1,5 +1,4 @@
-# stockD ![Logo](https://github.com/user-attachments/assets/242cf4db-acf8-4c07-9b55-f389bfaf177d)
-
+# stockD
 
 ## Overview
 
@@ -92,5 +91,6 @@ Submit a pull request with a brief description of your changes
 ## License
 
 This project currently does not include a license file. If you plan to use, distribute, or modify this project publicly, consider adding an appropriate open source license.
+
 
 
