@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1072991154998",
+    "project_id": "smart-grocery-293c0",
+    "storage_bucket": "smart-grocery-293c0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072991154998:android:8191e3a346269ec0e17997",
+        "android_client_info": {
+          "package_name": "com.example.smart_grocery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1072991154998-4tbl9vbqi61ou5serjqgsnu7af5k2rjl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smart_grocery",
+            "certificate_hash": "07d8e37e75264c0d53f6e6c9cf7da9a44ef87213"
+          }
+        },
+        {
+          "client_id": "1072991154998-7be0v7b22v9jpg05jlt5tn94gjaea4fc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpbUWtaXAr-0CjkiOqfvXhYluLxMUBQKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1072991154998-7be0v7b22v9jpg05jlt5tn94gjaea4fc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1072991154998-dqli6uh8adjcha8gb8v3tolhqvgemf8l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.smartGrocery"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
