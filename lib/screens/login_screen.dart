@@ -106,10 +106,10 @@ class LoginScreenState extends State<LoginScreen> {
       final User? user = credential.user;
       if (user == null) return;
 
-      // ✅ 1. Set display name in Firebase Auth
+      //  1. Set display name in Firebase Auth
       await user.updateDisplayName(name);
 
-      // ✅ 2. Save user profile in Firestore (CRITICAL)
+      //  2. Save user profile in Firestore (CRITICAL)
       await FirebaseFirestore.instance
           .collection('users')
           .doc(user.uid)
@@ -215,7 +215,7 @@ class LoginScreenState extends State<LoginScreen> {
                                 ),
                                 child: Stack(
                                   children: [
-                                    // 🟢 Sliding green highlight
+                                    // Sliding green highlight
                                     AnimatedAlign(
                                       duration: const Duration(milliseconds: 300),
                                       curve: Curves.easeInOut,
@@ -376,7 +376,7 @@ class LoginScreenState extends State<LoginScreen> {
           // Login Button
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.accent, // Mango Pop
+              backgroundColor: AppColors.accent, 
               foregroundColor: Colors.white,
               elevation: 0,
               minimumSize: const Size(150, 50),
@@ -542,7 +542,7 @@ class LoginScreenState extends State<LoginScreen> {
           // Sign Up Button
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.accent, // Mango Pop
+              backgroundColor: AppColors.accent,
               foregroundColor: Colors.white,
               elevation: 0,
               minimumSize: const Size(150, 50),
