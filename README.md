@@ -188,11 +188,11 @@ flutter run -d chrome
 
 | Login Screen | Home Dashboard | Receipt Scan |
 |--------------|----------------|--------------|
-| ![Login](screenshots/login.png) | ![Home](screenshots/home.png) | ![Scan](screenshots/scan.png) |
+| <img src="assets/img/Login.jpeg" width="250"> | <img src="assets/img/Dashboard.jpeg" width="250">| <img src="assets/img/Scan_Receipt.jpeg" width="250"> |
 
-| Category View | Expiry Tracking | Family Groups |
-|---------------|-----------------|---------------|
-| ![Categories](screenshots/categories.png) | ![Expiry](screenshots/expiry.png) | ![Family](screenshots/family.png) |
+| Expiry Tracking | Family Groups |
+|-----------------|---------------|
+| <img src="assets/img/Expiry.jpeg" width="250">| <img src="assets/img/Family.jpeg" width="250"> |
 
 </div>
 
@@ -262,3 +262,4 @@ This project currently does not include a license file. If you plan to use, dist
   <sub>Built with Flutter 🚀 | Powered by Gemini AI 🤖 | Backed by Firebase 🔥</sub>
 
 </div>
+
